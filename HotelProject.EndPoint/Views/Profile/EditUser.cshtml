@@ -1,0 +1,68 @@
+﻿@using HotelProject.Application.Services.Users.Command.EditUser;
+@model ResultUserDTO;
+@{
+    ViewData["Title"] = "EditUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="formm-date" style="margin: 30px; margin-bottom: 100px;">
+    <h4 style="margin-bottom: 50px; padding-bottom: 10px; border-bottom: 2px solid red;">در صورت لزوم مشخصات خود را تغییر دهید</h4>
+    <form id="frm-info" style="border-bottom: 1px dotted gray; margin-bottom: 20px;">
+        <div class="readOnlyInputs" style="display: flex; justify-content: space-around; align-items: center;">
+            <div class="column1">
+                <input type="text" hidden id="Id" value="@Model.Id" style="width: 300px !important; margin-bottom: 10px;" />
+
+                <label for="Name">نام : </label>
+                <input type="text" class="form-control" id="Name" value="@Model.Name" style="width: 300px !important; margin-bottom: 10px;" />
+
+                <label for="Email">ایمیل : </label>
+                <input type="text" class="form-control" id="Email" value="@Model.Email" style="width: 300px !important; margin-bottom: 10px;" />
+            </div>
+            <div class="column2">
+                <label for="Phone">تلفن ثابت : </label>
+                <input type="text" class="form-control" id="Phone" value="@Model.Phone" style="width: 300px !important; margin-bottom: 10px;;" />
+
+                <label for="Mobile">تلفن همراه : </label>
+                <input type="text" class="form-control" id="Mobile" value="@Model.Mobile" style="width: 300px !important; margin-bottom: 10px;" />
+            </div>
+        </div>
+    </form>
+    <a class="btn btn-success" onclick="ConfirmEdit()">ویرایش</a>
+</div>
+@section Scripts{ 
+   <script>
+       function ConfirmEdit() {
+           var Id = $('#Id').val();
+           var Name = $('#Name').val();
+           var Email = $('#Email').val();
+           var Phone = $('#Phone').val();
+           var Mobile = $('#Mobile').val();
+
+           var data = {
+               'Id': Id,
+               'Name': Name,
+               'Email': Email,
+               'Phone': Phone,
+               'Mobile': Mobile
+           };
+           $.ajax({
+               contentType: 'application/x-www-form-urlencoded',
+               dataType: 'json',
+               type: "POST",
+               url: "EditUser",
+               data: data,
+               success: function (data) {
+                   if (data.isSuccess == true) {
+                       alert(data.message);
+                   }
+                   else {
+                       alert(data.message);
+                   }
+               },
+               error: function (request, status, error) {
+                   alert("Error");
+               }
+           });
+       }
+   </script>
+}

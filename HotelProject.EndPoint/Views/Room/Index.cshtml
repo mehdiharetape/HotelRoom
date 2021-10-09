@@ -1,0 +1,113 @@
+﻿@using HotelProject.Application.Services.Rooms.Query.GetRoomDetails;
+@model ResultGetRoomsDTO;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-8 sing">
+    <div class=" single-grid">
+        <img class="img-responsive" src="~/@Model.ImageSrc" style="margin-top: 50px; margin-bottom: 30px;" alt="">
+        <div class="lone-line">
+            <h2>@Model.Name</h2>
+            <br />
+            @*<div class="cal">
+                <ul>
+                    <li><a href="#"><i class="glyphicon glyphicon-comment"> </i>19 نظر</a></li>
+                </ul>
+            </div>*@
+            <br />
+            <p>کد اتاق : @Model.Code</p>
+            <p>ابعاد : @Model.Dimension</p>
+            <p>تعداد تخت ها : @Model.BedCount</p>
+            <p>مبلغ اقامت هر شب : @Model.CostPerNight</p>
+            <p>جزئیات : @Model.RoomDetails.Detail</p>
+            <a href="~/Reservation/CheckReservationDate/@Model.Id" class="btn btn-danger">رزرو اتاق</a>
+        </div>
+    </div>
+    <div class=" single-profile">
+        <h4>
+            پست های مرتبط
+        </h4>
+        <div class="single-right ">
+            <div class="col-md-3 post-top">
+                <img class="img-responsive " src="~/SiteTemplate/images/s1.jpg" alt="">
+                <h6>
+
+                    لورم ایپسوم
+                </h6>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم </p>
+            </div>
+            <div class="col-md-3 post-top">
+                <img class="img-responsive " src="~/SiteTemplate/images/s2.jpg" alt="">
+                <h6>
+
+                    لورم ایپسوم
+                </h6>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم </p>
+            </div>
+            <div class="col-md-3 post-top">
+                <img class="img-responsive " src="~/SiteTemplate/images/s3.jpg" alt="">
+                <h6>
+
+                    لورم ایپسوم
+                </h6>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم </p>
+            </div>
+            <div class="col-md-3 post-top">
+                <img class="img-responsive " src="~/SiteTemplate/images/s4.jpg" alt="">
+                <h6>
+
+                    لورم ایپسوم
+                </h6>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم </p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="single-bottom">
+        <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+        <h3>پیام بگذارید</h3>
+        <form asp-action="AddNewComment" asp-controller="Room">
+            <div class="col-md-6 comment">
+                <input type="text" placeholder="نام" id="UserName">
+            </div>
+            <div class="col-md-6 comment">
+                <input type="text" placeholder="ایمیل" id="UserEmail">
+            </div>
+            <div class="clearfix"> </div>
+            <textarea placeholder="پیام" id="commentTxt"> </textarea>
+            <input onclick="AddComment()" class="btn btn-warning" type="button" value="ارسال" style="margin-bottom: 10px;">
+        </form>
+    </div>
+    <div class="single-bottom" style="background: white; height: auto; width: auto; padding: 20px;">        
+        @await Component.InvokeAsync("GetComments", Model.Id)
+        <br />
+    </div>
+</div>
+@section Scripts{   
+    <script>
+        function AddComment() {
+            $.ajax({
+                url: "/Room/AddNewComment/" +@Model.Id,
+                type: "GET",
+                data: {
+                    CommentTxt: $('#commentTxt').val(),
+                    Name: $('#UserName').val(),
+                    Email: $('#UserEmail').val(),
+                },
+                success: function (data) {
+                    if (data.isSuccess == true) {
+                        alert(data.message);
+                        window.location.reload();
+                    }
+                    else {
+                      alert(data.message);
+                    }
+                },
+                error: function (request, status, error) {
+                    alert("Error");
+                }
+            });
+      }
+    </script>
+}

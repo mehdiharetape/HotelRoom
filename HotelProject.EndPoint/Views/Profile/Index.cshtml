@@ -1,0 +1,95 @@
+﻿@using HotelProject.Application.Services.Reservations.Queries;
+@using HotelProject.Application.Services.Reservations.Command;
+@model List<ResultUserReserve_DTO>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="width: auto; height: auto; margin: 100px;">
+    <div id="infos" style="margin-bottom: 30px; display: flex; align-items: center;">
+        <h4>@User.Identity.Name</h4>
+        <a href="~/Profile/EditUser" class="btn btn-success" style="margin-right: 30px;">ویرایش پروفایل</a>
+    </div>
+    <div id="tbl-con" style="margin-top: 10px; padding-top: 10px; border-top: 1px dotted red;">
+        <h5 style="margin-bottom: 15px;">لیست رزرو ها</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">کد اتاق</th>
+                    <th scope="col">مبلغ کل</th>
+                    <th scope="col">تاریخ شروع</th>
+                    <th scope="col">تاریخ پایان</th>
+                    <th scope="col">افراد همراه</th>
+                    <th scope="col">اعمال و وضعیت</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th>@item.RoomCode</th>
+                    <td>@item.TotalPrice</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndtDate</td>
+                    <td>
+                        @foreach (var i in item.WithPersons)
+                        {
+                            <span>@i.Name - @i.Phone</span>
+                            <br />
+                        }
+                    </td>
+                    <td>
+                        @if(item.Status == Status.NotFinished)
+                        {
+                            <button class="btn btn-danger" onclick="CancelReserve('@item.Id')">لغو</button>
+                        }
+                        else if(item.Status == Status.Finished)
+                        {
+                            <span>رزرو تمام شده</span>
+                        }
+                        else
+                        {
+                            <span>لغو شد</span>
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{ 
+<script>
+    function CancelReserve(Id) {
+        if (confirm("آیا رزرو لغو شود؟")) {
+            var Id = Id;
+            data = { 'Id': Id };
+
+            $.ajax({
+                contentType: 'application/x-www-form-urlencoded',
+                dataType: 'json',
+                type: "POST",
+                url: 'CancelReserve',
+                data: data,
+                success: function (data) {
+                    if (data.isSuccess == true) {
+                        alert(data.message);
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                },
+                error: function (request, status, error) {
+                    alert(status);
+                    alert("Error");
+                }
+            });
+        }
+        else {
+            alert("تایید نشد");
+        }
+    }//end cancel
+</script>
+}

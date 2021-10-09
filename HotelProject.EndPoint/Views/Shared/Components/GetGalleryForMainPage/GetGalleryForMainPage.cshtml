@@ -1,0 +1,20 @@
+﻿@using HotelProject.Application.Services.Galleries.Query;
+@model List<ResultGalleryDTO>;
+@{
+    Layout = null;
+}
+
+@foreach (var i in Model)
+{
+    <div class="col-md-3 grid_box">
+        <a href="~/@i.ImageSrc" class="swipebox" target="_blank" title="Image Title"> <img src="~/@i.ImageSrc" class="img-responsive" alt="gallery images" style="width: 255px !important; height: 144px !important;"><span class="zoom-icon"></span> </a>
+        <div class="grid_box2">
+            <h4><a href="~/Gallery/Index">گالری</a></h4>
+            <p>
+                
+            </p>
+        </div>
+    </div>
+}
+
+

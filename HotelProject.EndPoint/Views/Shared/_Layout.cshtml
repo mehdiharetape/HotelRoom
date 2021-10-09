@@ -1,0 +1,235 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>هتل روم</title>
+    <link href="~/SiteTemplate/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="~/SiteTemplate/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Hotel Deluxe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+</head>
+<body>
+    <div class="header">
+        <div class="col-sm-8 header-right">
+            <div class="logo">
+                <a href="~/Home/Index"><img src="~/SiteTemplate/images/logo.png" alt="" /></a>
+            </div>
+            <div class="menu">
+                <a class="toggleMenu" href="~/Home/Index"><img src="~/SiteTemplate/images/nav.png" alt="" /></a>
+                <ul class="nav" id="nav">
+                    <li class="active"><a href="~/Home/Index">صفحه اصلی</a></li>
+                    <li><a href="~/Room/Rooms?ordering=NotOrder">اتاق ها</a></li>
+                    @*<li><a href="news.html">اخبارها</a></li>*@
+                    <li><a href="~/Gallery/Index">گالری</a></li>
+                    @*<li><a href="404.html">وبلاگ</a></li>*@
+                    <div class="clearfix"></div>
+                </ul>
+                <script type="text/javascript" src="~/SiteTemplate/js/responsive-nav.js"></script>
+            </div>
+            <!-- start search-->
+            @*<div class="search-box">
+                <div id="sb-search" class="sb-search">
+                    <form method="get" asp-route="~/Home/Index">
+                        <input class="sb-search-input" placeholder="عبارت جستجو را وارد کنید" type="search" name="SearchKey" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"> </span>
+                    </form>
+                </div>
+            </div>*@
+            <!----search-scripts---->
+            <!----//search-scripts---->
+            <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-sm-4 header_left">
+            <div id="loginContainer">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <span style="font-weight: bold; color: white">@User.Identity.Name</span>
+                    <span style="color: white;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a href="~/Authentication/SignOut" style="font-weight: bold;"><span>خروج</span></a>
+                    <span style="color: white;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a href="~/Profile/Index" style="font-weight: bold;"><span>پروفایل من</span></a>
+                }
+                else
+                {
+                    <a href="~/Authentication/SignUp" style="font-weight: bold;"><span>ثبت نام</span></a>
+                    <span style="color: white;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a href="~/Authentication/SignIn" style="font-weight: bold;"><span>ورود</span></a>
+                }
+
+                @*<div id="loginBox">
+            <form id="loginForm">
+                <fieldset id="body">
+                    <fieldset>
+                        <label for="email">آدرس ایمیل</label>
+                        <input type="text" name="email" id="email">
+                    </fieldset>
+                    <fieldset>
+                        <label for="password">رمز عبور</label>
+                        <input type="password" name="password" id="password">
+                    </fieldset>
+                    <input type="submit" id="login" value="Sign in">
+                    <label for="checkbox"><input type="checkbox" id="checkbox"> <i>مرا به خاطر بسپار</i></label>
+                </fieldset>
+                <span><a href="#">رمز عبور خود را فراموش کرده اید؟</a></span>
+            </form>
+        </div>*@
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+    @*<div class="banner">
+            <div class="container_wrap">
+                <h1>
+                    دنبال چی میگردی؟
+                </h1>
+                <div class="dropdown-buttons">
+                </div>
+                <form>
+                    <input type="text" value="کلید واژه، نام، تاریخ، ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">
+                    <div class="contact_btn">
+                        <label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="جستجو"></label>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>*@
+    <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+    <div class="content_top" style="background: wheat;">
+        <div class="container">
+            <div class="col-md-4 bottom_nav" style="margin-left: -40px;">
+                <div class="content_menu">
+                    <ul>
+                        <li>
+                            <a href="~/Room/Rooms?ordering=Cheapest&minPrice=@ViewBag.minPrice&maxPrice=@ViewBag.maxPrice">ارزانترین ها</a>
+                        </li>
+                        <li>
+                            <a href="~/Room/Rooms?ordering=MostExpensive&minPrice=@ViewBag.minPrice&maxPrice=@ViewBag.maxPrice">گران ترین ها</a>
+                        </li>
+                        <li>
+                            <a href="~/Room/Rooms?ordering=MostPopular&minPrice=@ViewBag.minPrice&maxPrice=@ViewBag.maxPrice">پر بازدید ترین ها</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <form style="width: 100% !important; margin-right: 160px;" asp-action="PriceLimit" asp-controller="Room" method="get" enctype="multipart/form-data">
+                    <span>فیلتر براساس  :  &nbsp;&nbsp;&nbsp;</span>
+
+                    <label for="minPrice">کمترین قیمت : </label>
+                    <input name="minPrice" type="number" id="minPrice" style="border: none; border-radius: 3px;  height: 34px; padding: 3px;" />
+
+                    <label for="maxPrice">بیشترین قیمت : </label>
+                    <input type="number" name="maxPrice" id="maxPrice" style="border: none; border-radius: 3px; height: 34px; padding: 3px;" />
+
+                    <button class="btn btn-success" type="submit" id="submitPrice">تایید</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+    <div class="content_middle">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+    </div>
+    <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer_top">
+                <h3>
+                    مشترک شدن در خبرنامه ما
+                </h3>
+                <form>
+                    <span>
+                        <i><img src="~/SiteTemplate/images/mail.png" alt=""></i>
+                        <input type="text" value="ایمیل خود را وارد کنید" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+                        <label class="btn1 btn2 btn-2 btn-2g">
+                            <input name="submit" type="submit" id="submit" value="اشتراک گذاری">
+                        </label>
+                        <div class="clearfix"> </div>
+                    </span>
+                </form>
+            </div>
+            <div class="footer_grids">
+                <div class="footer-grid">
+                    <h4>
+
+                        شرکت ما
+                    </h4>
+                    <ul class="list1">
+                        <li>
+                            <a href="contact.html">
+                                تماس
+                            </a>
+                        </li>
+                        <li><a href="#">گالری</a></li>
+                        <li><a href="#">در ارتباط با ما</a></li>
+                        <li><a href="#">انتقادات وپیشنهادات</a></li>
+                        <li><a href="#">صفحه اصلی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid">
+                    <h4>
+                        لیست علاقه مندی ها
+                    </h4>
+                    <ul class="list1">
+                        <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                        <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                        <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                        <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                        <li><a href="#">لورم ایپسوم متن ساختگی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-grid last_grid">
+                    <h4>ما را دنبال کنید</h4>
+                    <ul class="footer_social wow fadeInRight" data-wow-delay="0.4s">
+                        <li><a href=""> <i class="fb"> </i> </a></li>
+                        <li><a href=""><i class="tw"> </i> </a></li>
+                        <li><a href=""><i class="google"> </i> </a></li>
+                        <li><a href=""><i class="u_tube"> </i> </a></li>
+                    </ul>
+                    @*<div class="copy wow fadeInLeft" data-wow-delay="0.4s">
+                            <p>کلیه حقوق مادی و معنوی برای مجموعه برنامه نویسان محفوظ می باشد<a href="http://barnamenevisan.org/">برنامه نویسان</a></p>
+                        </div>*@
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--webfont-->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="~/SiteTemplate/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/SiteTemplate/js/login.js"></script>
+    <script src="~/SiteTemplate/js/jquery.easydropdown.js"></script>
+    <!--Animation-->
+    <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+    <script src="~/SiteTemplate/js/wow.min.js"></script>
+    <link href="~/SiteTemplate/css/animate.css" rel='stylesheet' type='text/css' />
+    <script>
+        new WOW().init();
+    </script>
+
+    <script src="~/SiteTemplate/js/classie.js"></script>
+    <script src="~/SiteTemplate/js/uisearch.js"></script>
+    <script>
+        new UISearch(document.getElementById('sb-search'));
+    </script>
+
+    @RenderSection("Scripts", false)
+    @RenderSection("Modals", false)
+</body>
+</html>

@@ -1,0 +1,382 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.EndPoint\\HotelProject.EndPoint.csproj": {}
+  },
+  "projects": {
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj",
+        "projectName": "HotelProject.Application",
+        "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj",
+        "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
+        "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.Mehdi.GH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj"
+              },
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj",
+        "projectName": "HotelProject.Common",
+        "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj",
+        "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
+        "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.Mehdi.GH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj",
+        "projectName": "HotelProject.Domain",
+        "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj",
+        "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
+        "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.Mehdi.GH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.EndPoint\\HotelProject.EndPoint.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.EndPoint\\HotelProject.EndPoint.csproj",
+        "projectName": "HotelProject.EndPoint",
+        "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.EndPoint\\HotelProject.EndPoint.csproj",
+        "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
+        "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.EndPoint\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.Mehdi.GH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj"
+              },
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj"
+              },
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj"
+              },
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj",
+        "projectName": "HotelProject.Persistance",
+        "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj",
+        "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
+        "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.Mehdi.GH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj"
+              },
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj"
+              },
+              "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj": {
+                "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

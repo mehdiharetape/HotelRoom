@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/SiteTemplate/css/login.css">
+    <title>ورود به هتل روم</title>
+</head>
+<body>
+    <section class="container">
+        <h4>ورود به هتل روم</h4>
+        <!-- inputs -->
+        <div class="inputs-container">
+            <div class="input-field">
+                <label for="email">ایمیل</label>
+                <input type="email" id="email" class="inps">
+            </div>
+
+            <div class="input-field">
+                <label for="password">رمز عبور</label>
+                <input type="password" id="password" class="inps">
+            </div>
+        </div>
+
+        <!-- buttons -->
+        <div class="btn-container">
+            <a href="~/Home/Index">بازگشت</a>
+            <a id="btn-register" onclick="LoginUser()" style="cursor: pointer;">ورود</a>
+        </div>
+    </section>
+</body>
+</html>
+<script src="~/SiteTemplate/js/jquery-1.11.1.min.js"></script>
+<script>
+    function LoginUser() {
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        var data = {
+            'email': email,
+            'password': password,
+        }
+
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "SignIn",
+            data: data,
+            success: function (data) {
+                if (data.isSuccess == true) {
+                    alert(data.message);
+                    window.location.replace("/");
+                }
+                else {
+                    alert(data.message);
+                }
+            },
+            error: function (request, status, error) {
+                alert("Error");
+            }
+
+        });
+    }
+</script>

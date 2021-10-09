@@ -1,0 +1,200 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "CreateRoom";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="basic-elements">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="content-header">فرم افزودن اتاق جدید</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">اطلاعات اتاق جدید را وارد نمایید</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <div class="form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">کد اتاق </label>
+                                            <input type="number" class="form-control" id="code">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">نام اتاق </label>
+                                            <input type="text" class="form-control" id="name">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> قیمت هر شب اقامت</label>
+                                            <input type="number" class="form-control" id="price">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">تعداد تخت </label>
+                                            <input type="number" class="form-control" id="bedCount">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> تصویر اصلی اتاق</label>
+                                            <input id="Image" type="file" multiple class="form-control">
+                                        </fieldset>
+                                    </div>
+                                    <br />
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">توضیحات</label>
+                                            <textarea class="form-control" id="describe"></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> ابعاد </label>
+                                            <input type="text" class="form-control" id="dimension">
+                                        </fieldset>
+                                    </div>
+
+                                    @*<div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+            <fieldset class="form-group">
+                <label for="basicInput">تصاویر گالری</label>
+                <input type="file" multiple class="form-control" accept="images/*" id="GalleryImages">
+            </fieldset>
+        </div>*@
+
+
+                                    @*<div class="col-xl-2 col-lg-6 col-md-12 mb-1">
+            <fieldset class="form-group">
+                <label for="basicInput"> نام ویژگی </label>
+                <input type="text" class="form-control" id="txtDisplayName" placeholder="نام ویژگی" />
+            </fieldset>
+        </div>*@
+
+                                    <!--<div class="col-xl-2 col-lg-6 col-md-12 mb-1">
+        <fieldset class="form-group">
+            <label for="basicInput"> مقدار ویژگی </label>
+            <input type="text" class="form-control" id="txtValue" placeholder="مقدار ویژگی" />
+        </fieldset>
+    </div>
+    <div class="col-xl-2 col-lg-6 col-md-12 mb-1">
+        <fieldset class="form-group">
+            <br />
+            <a class="btn btn-success" id="btnAddFeatures">افزودن</a>
+        </fieldset>
+    </div>
+    <br class="clear" />
+    <table id="tbl_Features" class="col-md-12 table table-bordered table-hover  table-condensed table-responsive">
+        <thead>
+            <tr>-->
+                                    @*<th>
+            نام ویژگی
+        </th>*@
+                                    <!--<th>
+                    مقدار ویژگی
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>-->
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <br />
+                                            <a id="btnAddRoom" class="btn btn-success col-md-12"> افزودن </a>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        //$("#btnAddFeatures").on('click', function () {
+        //    var detailValue = $("#txtValue").val();
+        //    if (detailValue == null) {
+        //        alert("مقادیر را وارد کنید");
+        //    }
+        //    else {
+        //        $("#tbl_Features tbody").append('<tr> <td>' + detailValue + '</td> <td> <a class="idFeatures btnDelete btn btn-danger"> حذف </a> </td> </tr>');
+        //        $("#txtValue").val('');
+        //    }
+        //});
+        //$("#tbl_Features").on('click', '.idFeatures', function () {
+        //    $(this).closest('tr').remove();
+        //});
+        //-------------------------------
+        $("#btnAddRoom").on('click', function () {
+            var data = new FormData();
+
+            data.append("Code", $("#code").val());
+            data.append("Name", $("#name").val());
+            data.append("BedsCount", $("#bedCount").val());
+            data.append("CostPerNight", $("#price").val());
+            data.append("Dimension", $("#dimension").val());
+            data.append("RoomDecribe", $("#describe").val());
+            //-----------------------------------
+            var Image = $("#Image").get(0);
+            var files = Image.files;
+            if (files.length > 0) {
+                data.append("images", files[0]);
+            }
+            //-----------------------------------
+            //var dataDetailsModel = $("#tbl_Features tr:gt(0)").map(function () {
+            //    return {
+            //        detailValue: $(this.cells[0]).text()
+            //    };
+            //}).get();
+
+            //$.each(dataDetailsModel, function (i, val) {
+            //    data.append('[' + i + '].Detail', val.detailValue);
+            //});
+
+            //send data to controller
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "CreateRoom",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (data) {
+                    if (data.isSuccess == true) {
+                        alert(data.message);
+                        //window.location.href = "/Admin/Product/";
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                }
+            });
+            ajaxRequest.done(function (xhr, textStatus) {
+                // Do other operation
+            });
+        });
+    </script>
+}

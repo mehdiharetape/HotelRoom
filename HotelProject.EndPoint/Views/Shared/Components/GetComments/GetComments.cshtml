@@ -1,0 +1,25 @@
+﻿@using HotelProject.Application.Services.Comments.Query;
+@model List<GetCommentResultDTO>;
+@{
+    Layout = null;
+}
+<h3>نظرات کاربران (@Model.Count() نظر)</h3>
+<br />
+<br />
+@foreach (var item in Model)
+{
+    <div style="border-bottom: 1px dotted red; padding: 40px;">
+        <div style="margin-bottom: 65px;">
+            <div class="col-md-3 comment" style="color: gray">
+                <h4>@item.Name</h4>
+            </div>
+            <div class="col-md-3 comment" style="color: gray">
+                <h4>@item.InsertTime.Day / @item.InsertTime.Month / @item.InsertTime.Year</h4>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <p>
+            @item.CommentTxt
+        </p>
+    </div>
+}

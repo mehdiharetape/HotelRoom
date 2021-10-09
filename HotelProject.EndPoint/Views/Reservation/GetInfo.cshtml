@@ -1,0 +1,134 @@
+﻿@using HotelProject.Application.Services.Users.Query.GetUserDetails;
+@model ResultGetDetails_DTO;
+@{
+    ViewData["Title"] = "GetInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .withPersons {
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="formm-date" style="margin: 30px; margin-bottom: 100px;">
+    <h4 style="margin-bottom: 50px; padding-bottom: 10px; border-bottom: 2px solid red;">مشخصات رزرو (در صورت مغایرت پروفایل خود را اصلاح کنید)</h4>
+    <form id="frm-info" style="border-bottom: 1px solid gray; margin-bottom: 10px;">
+        <div class="readOnlyInputs" style="display: flex; justify-content: space-around; align-items: center;">
+            <div class="column1">
+                <label for="RoomCode">کد اتاق : </label>
+                <input type="text" class="form-control" readonly id="RoomCode" value="@Model.Code" style="width: 300px !important; margin-bottom: 10px;" />
+
+                <label for="RoomName">نام اتاق : </label>
+                <input type="text" class="form-control" readonly id="RoomName" value="@Model.RoomName" style="width: 300px !important; margin-bottom: 10px;" />
+
+                <label for="Name">نام : </label>
+                <input type="text" class="form-control" readonly id="Name" value="@Model.UserName" style="width: 300px !important; margin-bottom: 10px;" />
+
+                <label for="Email">ایمیل : </label>
+                <input type="text" class="form-control" readonly id="Email" value="@Model.Email" style="width: 300px !important; margin-bottom: 10px;" />
+            </div>
+            <div class="column2">
+                <label for="Phone">تلفن ثابت : </label>
+                <input type="text" class="form-control" readonly id="Phone" value="@Model.Phone" style="width: 300px !important; margin-bottom: 10px;;" />
+
+                <label for="Mobile">تلفن همراه : </label>
+                <input type="text" class="form-control" readonly id="Mobile" value="@Model.Mobile" style="width: 300px !important; margin-bottom: 10px;" />
+
+                <label for="startDate">تاریخ شروع رزرو : </label>
+                <input type="text" class="form-control" readonly id="startDate" value="@ViewBag.StartTime" style="width: 300px !important; margin-bottom: 10px;" />
+
+                <label for="endDate">تارخ پایان رزرو : </label>
+                <input type="text" class="form-control" readonly id="endDate" value="@ViewBag.EndTime" style="width: 300px !important; margin-bottom: 10px;" />
+            </div>
+        </div>
+        <h4 style="margin-top: 15px;">اطلاعات زیر را وارد کنید</h4>
+        <div class="fillInputs" style="padding-top: 10px; margin-bottom: 30px; border-top: 2px solid red;">
+            <span for="startDate">آدرس : </span>
+            <input class="form-control" type="text" id="address" value="" style="width: 500px !important; margin-bottom: 10px;" />
+            <span for="endDate">تعداد افراد همراه : </span>
+            <input class="form-control" type="number" id="withNumbers" value="" style="width: 500px !important; margin-bottom: 10px;" />
+            <input type="button" id="addPerson" class="btn btn-warning" value="افزودن فرد همراه" />
+        </div>
+    </form>
+    <a class="btn btn-success" onclick="ConfirmReservation('@Model.UserId', '@Model.RoomId')">ثبت</a>
+</div>
+@section Scripts{ 
+   <script>
+       //----- display add persons inputs ---------
+       $("#addPerson").on('click', function () {
+           $("#frm-info").append(
+               '<div class="withPersons" id="divWith">'+
+                   '<div class="fillInputs" style="padding-top: 10px; border-top: 2px solid red;">'+
+                      '<span for="startDate">نام : </span>'+
+                      '<input class="form-control withNames" type="text" id="withName" value="" style="width: 500px !important; margin-bottom: 10px;" />'+
+                      '<span for="endDate">  تلفن همراه : </span>'+
+                      '<input class="form-control withPhones" type="number" id="withPhone" value="" style="width: 500px !important; margin-bottom: 10px;" />'+
+                   '</div>'+
+                   '<input type="button" class="btn btn-danger remove" value="حذف" />'+
+               '</div>' 
+           );
+       });
+       $("#frm-info").on('click', '.remove', function () {
+           $(this).closest('.withPersons').remove();
+       });
+       //-----------------------------------------
+       //------------ post data ------------------
+       function ConfirmReservation(UserId, RoomId) {
+           var UserId = UserId;
+           var RoomId = RoomId;
+           var UserName = $('#Name').val();
+           var StartTime = $('#startDate').val();
+           var EndTime = $('#endDate').val();
+           var Mobile = $('#Mobile').val();
+           var UserPhone = $('#Phone').val();
+           var Address = $('#address').val();
+           var WithPersonsCount = $('#withNumbers').val();
+           //persons info
+           var dataPersonModel = $("#frm-info .withPersons").map(function () {
+               return {
+                   Name: $(this.getElementsByClassName('withNames')).val(),
+                   Phone: $(this.getElementsByClassName('withPhones')).val(),
+               };
+           }).get();
+
+           dataPerson = $.each(dataPersonModel, function (val) {
+               Name = val.Name;
+               Phone = val.Phone;
+           });
+           WithPersons = dataPerson;
+           //------
+           var data = {
+               'UserId': UserId,
+               'RoomId': RoomId,
+               'UserName': UserName,
+               'StartTime': StartTime,
+               'EndTime': EndTime,
+               'Mobile': Mobile,
+               'UserPhone': UserPhone,
+               'Address': Address,
+               'WithPersonsCount': WithPersonsCount,
+               'WithPersons': WithPersons,
+           };
+
+           $.ajax({
+               contentType: 'application/x-www-form-urlencoded',
+               dataType: 'json',
+               type: "POST",
+               url: "GetInfo",
+               data: data,
+               success: function (data) {
+                   if (data.isSuccess == true) {
+                       alert(data.message);
+                       window.location.replace("/Profile/Index");
+                   }
+                   else {
+                       alert(data.message);
+                   }
+               },
+               error: function (request, status, error) {
+                   alert("Error");
+               }
+           });
+       }
+   </script>
+}

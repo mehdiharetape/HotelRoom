@@ -1,0 +1,26 @@
+﻿@using HotelProject.Application.Services.Galleries.Query;
+@model List<ResultGalleryDTO>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="living_middle">
+    <div class="container">
+        <div class="entertain_box wow fadeInRight animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 grid_box" style="margin-top: 10px">
+                    <a href="~/@item.ImageSrc" class="swipebox" target="_blank" title="galerry images"> <img src="~/@item.ImageSrc" class="img-responsive" alt="gallery" style="width: 255px !important; height: 144px !important;"><span class="zoom-icon"></span> </a>
+                    <div class="grid_box2">
+                        <h4></h4>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            }
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "CheckReservationDate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="formm-date" style="margin: 30px; margin-bottom: 100px;">
+    <h4 style="margin-bottom: 50px; padding-bottom: 10px; border-bottom: 2px solid red;">تاریخ شروع و پایان رزرو را مشخص کنید</h4>
+    <div style="margin-bottom: 20px;">
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker3'>
+                        <label for="startTime">تاریخ شروع : </label>
+                        <input type='date' class="form-control" id="startTime" style="margin-bottom: 20px;">
+                        <br />
+                        <label for="endTime">تاریخ پایان : </label>
+                        <input type='date' class="form-control" id="endTime"/>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker3').datetimepicker({
+                        format: 'LT'
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <button onclick="DateCheck('@ViewBag.Id')" class="btn btn-success">بررسی تاریخ</button>
+</div>
+
+@section Scripts{ 
+   <script>
+       function DateCheck(Id) {
+           var Id = Id;
+           var startDate = $('#startTime').val();
+           var endDate = $('#endTime').val();
+           var data = {
+               'Id': Id,
+               'startTime': startDate,
+               'endTime': endDate
+           };
+           $.ajax({
+               contentType: 'application/x-www-form-urlencoded',
+               dataType: 'json',
+               type: "POST",
+               url: "CheckReservationDate",
+               data: data,
+               success: function (data) {
+                   if (data.isSuccess == true) {
+                       alert(data.message);
+                       window.location.replace("/Reservation/GetInfo/?Id=" + '@ViewBag.Id' + "&startTime=" + startDate + "&endTime=" + endDate);
+                   }
+                   else {
+                       alert(data.message);
+                   }
+               },
+               error: function (request, status, error) {
+                   alert("Error");
+               }
+           });
+       }
+   </script>
+}

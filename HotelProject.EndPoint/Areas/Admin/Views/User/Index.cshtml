@@ -1,0 +1,137 @@
+﻿@using HotelProject.Application.Services.Users.Query.GetUsersList;
+@model List<UsersList_DTO>;
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title-wrap bar-success">
+                                <h4 class="card-title">لیست کاربران</h4>
+                            </div>
+                        </div>
+                        <div class="card-body collapse show">
+                            <div class="card-block card-dashboard">
+                                @*<p class="card-text">لیست سفارشات فروشگاه</p>*@
+                                <form method="get" class="col-xl-4 col-lg-6 col-md-12 mb-1" asp-route="~/Admin/User/Index">
+                                        <fieldset class="form-group">
+                                            <input type="text" class="form-control" name="SearchKey" />
+                                            <button class="btn btn-success">جستجو</button>
+                                        </fieldset>
+                                </form>
+                                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                                    @*<div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="DataTables_Table_0_length"><label>نمایش <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> سطر</label></div></div><div class="col-sm-12 col-md-6"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>جستجو:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div>*@
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-striped table-bordered zero-configuration dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="نام: activate to sort column descending" style="width: 222px;">نام</th>
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موبایل: activate to sort column descending" style="width: 222px;">موبایل</th>
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="تلفن: activate to sort column descending" style="width: 222px;">تلفن</th>
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="نقش: activate to sort column descending" style="width: 222px;">نقش</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="ایمیل: activate to sort column ascending" style="width: 401px;">ایمیل</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    @foreach (var item in Model)
+                                                    {
+                                                        <tr role="row" class="odd">
+                                                            <td class="sorting_1">@item.Name</td>
+                                                            <td class="sorting_1">@item.Mobile</td>
+                                                            <td class="sorting_1">@item.Phone</td>
+                                                            <td class="sorting_1">@item.Role</td>
+                                                            <td>@item.Email</td>
+
+                                                            <td>
+                                                                <a class="btn btn-info" href="~/Admin/User/EditUser/?Id=@item.Id&Name=@item.Name&Mobile=@item.Mobile&Phone=@item.Phone&Email=@item.Email">ویرایش</a>
+                                                                <button class="btn btn-danger" onclick="DeleteUser('@item.Id')">حذف</button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+
+                                                </tbody>
+                                                @*<tfoot>
+                                                        <tr><th rowspan="1" colspan="1">نام</th><th rowspan="1" colspan="1">ایمیل</th><th rowspan="1" colspan="1">اداره</th><th rowspan="1" colspan="1">سن</th><th rowspan="1" colspan="1">تاریخ شروع</th><th rowspan="1" colspan="1">حقوق</th></tr>
+                                                    </tfoot>*@
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                         <div class="col-sm-12 col-md-5">
+                                             <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite"></div>
+                                         </div>
+                                         <div class="col-sm-12 col-md-7">
+                                             <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                                 <ul class="pagination">
+                                                     <li class="paginate_button page-item previous" id="DataTables_Table_0_previous">
+                                                         <a href="~/Admin/User/Index?pageid=@((ViewBag.PageId != 1)? (ViewBag.PageId-1):1)" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">قبلی</a>
+                                                     </li>
+                                                     @for (int i = 1; i <= (ViewBag.PageCount + 1); i++)
+                                                     {
+                                                         <li class="paginate_button page-item @((ViewBag.PageId==i)?"active":"")">
+                                                             <a href="~/Admin/User/Index?pageid=@i" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">@i</a>
+                                                         </li>
+                                                     }
+
+                                                     <li class="paginate_button page-item next" id="DataTables_Table_0_next">
+                                                          <a href="~/Admin/User/Index?pageid=@(ViewBag.PageId+1)" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">بعدی</a>
+                                                      </li>
+                                                 </ul>                    
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        //Remove
+        function DeleteUser(Id) {
+            if (confirm("آیا کاربر حذف شود؟")) {
+                var Id = Id;
+                data = { 'Id': Id };
+
+                $.ajax({
+                    contentType: 'application/x-www-form-urlencoded',
+                    dataType: 'json',
+                    type: "POST",
+                    url: "DeleteUser",
+                    data: data,
+                    success: function (data) {
+                        if (data.isSuccess == true) {
+                            alert(data.message);
+                        }
+                        else {
+                            alert(data.message);
+                        }
+                    },
+                    error: function (request, status, error) {
+                        alert("Error");
+                    }
+                });
+            }
+            else {
+                alert("لغو شد");
+            }
+        }
+       
+    </script>
+}

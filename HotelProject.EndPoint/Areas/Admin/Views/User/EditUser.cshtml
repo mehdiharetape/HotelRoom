@@ -1,0 +1,121 @@
+﻿@using HotelProject.Application.Services.Roles.Query.GetRoles;
+@model List<RolesDTO>;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "EditUser";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="basic-elements">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="content-header">فرم ویرایش کاربر </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">اطلاعات کاربر را ویرایش وارد نمایید</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">نام </label>
+                                            <input type="text" class="form-control" id="fullname" value="@ViewBag.Name">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">تلفن همراه </label>
+                                            <input type="text" class="form-control" id="mobile" value="@ViewBag.Mobile">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">تلفن ثابت </label>
+                                            <input type="text" class="form-control" id="phone" value="@ViewBag.Phone">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="helpInputTop">پست الکترونیک</label>
+                                            <small class="text-muted"><i>info@example.net</i></small>
+                                            <input type="text" class="form-control" id="email" value="@ViewBag.Email">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">نقش</label>
+                                            <select class="form-control" id="RoleId" name="Role" asp-items="@ViewBag.Roles">
+                                            </select>
+                                            <p><small class="text-muted">سطح دسترسی کاربر مورد نظر را تعیین کنید</small></p>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <input hidden type="text" class="form-control" id="Id" value="@ViewBag.Id">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <br />
+                                            <a onclick="EditUser()" class="btn btn-success col-md-12">تکمیل  ویرایش </a>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{ 
+<script>
+    function EditUser() {
+        var Id = $('#Id').val();
+        var Name = $('#fullname').val();
+        var Mobile = $('#mobile').val();
+        var Phone = $('#phone').val();
+        var Email = $('#email').val();
+        var RoleId = $('#RoleId').val();
+
+        var data = {
+            'Id': Id,
+            'Name': Name,
+            'Mobile': Mobile,
+            'Phone': Phone,
+            'Email': Email,
+            'RoleId': RoleId
+        };
+
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "EditUser",
+            data: data,
+            success: function (data) {
+                if (data.isSuccess == true) {
+                    alert(data.message);
+                }
+                else {
+                    alert(data.message);
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+    }
+</script>
+}

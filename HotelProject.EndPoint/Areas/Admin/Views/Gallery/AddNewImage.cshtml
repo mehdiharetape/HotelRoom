@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "AddNewImage";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="basic-elements">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="content-header">افزودن عکس گالری جدید</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0"></h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <div class="form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">تصاویر </label>
+                                            <input type="file" multiple class="form-control" id="Images">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">نمایش داده شود؟ </label>
+                                            <input type="checkbox" class="form-control" id="Displayed">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <br />
+                                            <a id="btnAddImage" class="btn btn-success col-md-12"> افزودن تصویر  </a>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{ 
+   <script>
+       $('#btnAddImage').on('click', function () {
+           var data = new FormData();
+
+           var Image = $("#Images").get(0);
+           var files = Image.files;
+           if (files.length > 0) {
+               data.append("images", files[0]);
+           }
+           //data.append("Show", $("#Displayed").prop("checked", true));
+           if ($("#Displayed").prop("checked") === true) {
+               data.append('Show', true);
+           }
+           else {
+               data.append('Show', false);
+           }
+
+           var ajaxRequest = $.ajax({
+               type: "POST",
+               url: "AddNewImage",
+               contentType: false,
+               processData: false,
+               data: data,
+               success: function (data) {
+
+                   if (data.isSuccess == true) {
+                       alert(data.message);
+                   }
+                   else {
+                       alert(data.message);
+                   }
+               },
+               error: function (xhr, ajaxOptions, thrownError) {
+                   alert(xhr.status);
+                   alert(thrownError);
+               }
+           });
+       });
+   </script>
+} 

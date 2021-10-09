@@ -1,0 +1,89 @@
+﻿@using HotelProject.Application.Services.Rooms.Query.GetRoomsForSite;
+@model List<ResultGetRoomsDTO>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content_middle_box">
+    @*rooms*@
+    <div class="top_grid">
+        <h4><a href="~/Room/Rooms?ordering=NotOrder">نمایش همه ی اتاق ها</a></h4>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 index-grids" style="height: 302px !important;">
+                <div class="grid1">
+                    <div class="view view-first">
+                        <div class="index_img" style="height: 187px !important;">
+                            <img src="~/@item.ImageSrc" class="img-responsive" alt="roomImage">
+                        </div>
+                        <div class="sale">@item.CostPerNight تومان</div>
+                        <div class="mask">
+                            <div class="info"><i class="search"> </i> 
+                                <a href="~/Room/Index/@item.Id" style="text-decoration: none; color: white;">اطلاعات بیشتر</a>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="home"></i>
+                    <div class="inner_wrap" style="height: 104px !important;">
+                        <h3>@item.Name</h3>
+                        <ul class="star1">
+                            <h4 class="green">
+                                @item.Dimension
+                            </h4>
+                            <li><a href="#"> <img src="images/star1.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="clearfix"> </div>
+    </div>
+    
+    @*gallery*@
+    <div class="living_middle" style="margin-right: -14px;">
+        <div class="container">
+            <div class="entertain_box wow fadeInRight animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
+                @await Component.InvokeAsync("GetGalleryForMainPage")
+                <div class="clearfix"> </div>
+                <br />
+                <h4><a href="~/Gallery/Index">نمایش همه ی تصاویر گالری</a></h4>
+            </div>
+        </div>
+    </div>
+
+</div>
+@*offering*@
+<div class="offering">
+    <h2>هتل روم به شما چه چیزی ارائه می دهد؟</h2>
+    @*<h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</h3>*@
+    <ul class="icons wow fadeInUp animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+        <li><i class="icon1"> </i><span class="one"> </span></li>
+        <li><i class="icon2"> </i><span class="two"> </span></li>
+        <li><i class="icon3"> </i><span class="three"> </span></li>
+        <li><i class="icon4"> </i><span class="four"> </span></li>
+        <li><i class="icon5"> </i></li>
+    </ul>
+    <div class="real">
+        @*<h4>واقعیت</h4>*@
+        </br>
+        </br>
+        <div class="col-sm-6">
+            <ul class="service_grid">
+                <i class="s1"> </i>
+                <li class="desc1 wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                    <p>با هتل روم اتاق خود را سریع و آسان رزرو کنید</p>
+                <div class="clearfix"> </div>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <ul class="service_grid">
+                <i class="s2"> </i>
+                <li class="desc1 wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                    <p>با هتل روم کیفیت خدمات ، راحتی و سلامت را تجربه کنید</p>
+                <div class="clearfix"> </div>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+      
