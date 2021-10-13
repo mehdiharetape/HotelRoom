@@ -41,3 +41,4 @@ C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Infrastructure\obj
 C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Infrastructure\obj\Debug\net5.0\HotelProject.Persistance.AssemblyInfo.cs
 C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Infrastructure\obj\Debug\net5.0\HotelProject.Persistance.csproj.CoreCompileInputs.cache
 C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Infrastructure\obj\Debug\net5.0\HotelProject.Persistance.genruntimeconfig.cache
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Infrastructure\obj\Debug\net5.0\HotelProject.Persistance.csproj.CopyComplete

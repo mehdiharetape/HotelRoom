@@ -20,6 +20,7 @@ namespace HotelProject.EndPoint.Controllers
         public IActionResult Index()
         {
             long? UserId = ClaimUtility.GetUserId(User);
+            _facade.CheckFinishedReservation.CheckFinshedForUser(UserId);
             return View(_facade.GetReservsForUser.GetReservs(UserId).Data);
         }
 

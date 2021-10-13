@@ -1,0 +1,12 @@
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\bin\Release\net5.0\HotelProject.Common.deps.json
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\bin\Release\net5.0\HotelProject.Common.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\bin\Release\net5.0\ref\HotelProject.Common.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\bin\Release\net5.0\HotelProject.Common.pdb
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\HotelProject.Common.csproj.AssemblyReference.cache
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\HotelProject.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\HotelProject.Common.AssemblyInfoInputs.cache
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\HotelProject.Common.AssemblyInfo.cs
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\HotelProject.Common.csproj.CoreCompileInputs.cache
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\HotelProject.Common.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\ref\HotelProject.Common.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Common\obj\Release\net5.0\HotelProject.Common.pdb

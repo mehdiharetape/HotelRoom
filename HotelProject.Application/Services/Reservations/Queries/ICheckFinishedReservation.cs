@@ -12,6 +12,7 @@ namespace HotelProject.Application.Services.Reservations.Queries
     public interface ICheckFinishedReservation
     {
         void CheckFinished();
+        void CheckFinshedForUser(long? Id);
     }
 
     public class CheckFinishedReservation : ICheckFinishedReservation
@@ -30,6 +31,20 @@ namespace HotelProject.Application.Services.Reservations.Queries
                 if (item.EndTime < DateTime.Now)
                 {
                     item.Status = Status.Finished;
+                    _context.SaveChanges();
+                }
+            }
+        }
+
+        public void CheckFinshedForUser(long? Id)
+        {
+            var reservs = _context.Reservations.Where(r => r.UserId == Id && r.Status == Status.NotFinished).ToList();
+
+            foreach (var items in reservs)
+            {
+                if (items.EndTime < DateTime.Now)
+                {
+                    items.Status = Status.Finished;
                     _context.SaveChanges();
                 }
             }

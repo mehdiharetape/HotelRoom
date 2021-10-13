@@ -1,0 +1,12 @@
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\bin\Release\net5.0\HotelProject.Domain.deps.json
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\bin\Release\net5.0\HotelProject.Domain.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\bin\Release\net5.0\ref\HotelProject.Domain.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\bin\Release\net5.0\HotelProject.Domain.pdb
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\HotelProject.Domain.csproj.AssemblyReference.cache
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\HotelProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\HotelProject.Domain.AssemblyInfoInputs.cache
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\HotelProject.Domain.AssemblyInfo.cs
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\HotelProject.Domain.csproj.CoreCompileInputs.cache
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\HotelProject.Domain.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\ref\HotelProject.Domain.dll
+C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Domain\obj\Release\net5.0\HotelProject.Domain.pdb

@@ -31,4 +31,3 @@ C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Application\obj\De
 C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Application\obj\Debug\net5.0\HotelProject.Application.AssemblyInfoInputs.cache
 C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Application\obj\Debug\net5.0\HotelProject.Application.AssemblyInfo.cs
 C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Application\obj\Debug\net5.0\HotelProject.Application.csproj.CoreCompileInputs.cache
-C:\CsharpProjects\Hotel_Project\HotelRoom-master\HotelProject.Application\obj\Debug\net5.0\HotelProject.Application.csproj.CopyComplete
