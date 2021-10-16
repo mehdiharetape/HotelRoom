@@ -30,30 +30,11 @@ namespace HotelProject.EndPoint.Controllers
         [HttpPost]
         public IActionResult SignUp(SignUpViewModel request)
         {
-            if(string.IsNullOrWhiteSpace(request.Name) || string.IsNullOrWhiteSpace(request.Email)
-                || string.IsNullOrWhiteSpace(request.Mobile) || string.IsNullOrWhiteSpace(request.Phone)
-                || string.IsNullOrWhiteSpace(request.Password))
+            CheckAll check = new CheckAll(request.Name, request.Mobile, request.Phone, request.Email,
+                    request.Password, request.RePassword);
+            if (!check.check())
             {
-                return Json(new ResultDTO { IsSuccess = false, Message = "لطفا تمام موارد را وارد کنید"});
-            }
-            if(User.Identity.IsAuthenticated == true)
-            {
-                return Json(new ResultDTO { IsSuccess = false, Message = "شما قبلا در سایت ثبت نام کرده اید" });
-            }
-            if(request.Password != request.RePassword)
-            {
-                return Json(new ResultDTO { IsSuccess = false, Message = "تکرار رمز عبور اشتباه است" });
-            }
-            if(request.Password.Length < 8)
-            {
-                return Json(new ResultDTO { IsSuccess = false, Message = "رمز عبور حداققل باید 8 کاراکتر باشد" });
-            }
-
-            string emailRegex = @"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$";
-            var match = Regex.Match(request.Email, emailRegex, RegexOptions.IgnoreCase);
-            if (!match.Success)
-            {
-                return Json(new ResultDTO { IsSuccess = false, Message = "ایمیل خود را به درستی وارد کنید" });
+                return Json(new ResultDTO { IsSuccess = false, Message = check.message });
             }
 
             var signUpResult = _facade.RegisterUserForAdmin.RegisterUser(new RegisterUser_DTO

@@ -5995,11 +5995,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj",
+      "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj",
       "projectName": "HotelProject.Persistance",
-      "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj",
+      "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Infrastructure\\HotelProject.Persistance.csproj",
       "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
-      "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Infrastructure\\obj\\",
+      "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6019,14 +6019,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj": {
-              "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Application\\HotelProject.Application.csproj"
+            "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Application\\HotelProject.Application.csproj": {
+              "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Application\\HotelProject.Application.csproj"
             },
-            "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj": {
-              "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj"
+            "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Common\\HotelProject.Common.csproj": {
+              "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Common\\HotelProject.Common.csproj"
             },
-            "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj": {
-              "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj"
+            "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Domain\\HotelProject.Domain.csproj": {
+              "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Domain\\HotelProject.Domain.csproj"
             }
           }
         }

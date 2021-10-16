@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dAAoangM5/dGAJ8+xPBNlhGHlBzFF9YMp1XVC5NntHg+QPtJEMMN13N8WOIe9X5Z0ZaWErWZXzmg1MysA8CGFg==",
+  "dgSpecHash": "92Ht1yAl9Szy8XH6Wet0jqntNcQBI9r8Ra9eExICtLpU30jHXZxdh8unohE+yx70bbGJ2tu0HTKKlFMun2++5A==",
   "success": true,
-  "projectFilePath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj",
+  "projectFilePath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Common\\HotelProject.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -25,52 +25,18 @@ namespace HotelProject.Application.Services.Users.Command.RegisterUser.IRegister
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(request.Name))
+                CheckAll check = new CheckAll(request.Name, request.Mobile, request.Phone, request.Email,
+                    request.Password, request.RePassword);
+                if (!check.check())
                 {
                     return new ResultDTO<UserResultDTO>()
                     {
                         Data = {},
                         IsSuccess = false,
-                        Message = "نام را وارد کنید"
+                        Message = check.message
                     };
                 }
-                if (string.IsNullOrWhiteSpace(request.Mobile))
-                {
-                    return new ResultDTO<UserResultDTO>()
-                    {
-                        Data = { },
-                        IsSuccess = false,
-                        Message = "همراه خود را وارد کنید"
-                    };
-                }
-                if (string.IsNullOrWhiteSpace(request.Phone))
-                {
-                    return new ResultDTO<UserResultDTO>()
-                    {
-                        Data = { },
-                        IsSuccess = false,
-                        Message = "تلفن ثابت خود را وارد کنید"
-                    };
-                }
-                if (string.IsNullOrWhiteSpace(request.Password))
-                {
-                    return new ResultDTO<UserResultDTO>()
-                    {
-                        Data = { },
-                        IsSuccess = false,
-                        Message = "رمز عبور خود را وارد کنید"
-                    };
-                }
-                if (request.Password != request.RePassword)
-                {
-                    return new ResultDTO<UserResultDTO>()
-                    {
-                        Data = { },
-                        IsSuccess = false,
-                        Message = "تگرار رمز عبور نادرست است"
-                    };
-                }
-                //
+
                 User user = new User() 
                 {
                     Name = request.Name,

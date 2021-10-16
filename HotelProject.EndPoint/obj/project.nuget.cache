@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EZgMIROgcnDmM4NjK0fbymvE7AaKuBn2GA5OF66Km9BCC1s/ZCrZvKAFG2iJi86WfAz+shhFbtag67xxKv+oQg==",
+  "dgSpecHash": "rCto99RnnS9fpE2icusBsLDeYOPZ/0sh29C6ghESuGoy12nS4AUqS0kOlsIYAgwI2Jz8U0Fq+OWGTPcXnwCceg==",
   "success": true,
-  "projectFilePath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.EndPoint\\HotelProject.EndPoint.csproj",
+  "projectFilePath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.EndPoint\\HotelProject.EndPoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",

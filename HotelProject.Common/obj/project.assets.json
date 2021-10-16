@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj",
+      "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Common\\HotelProject.Common.csproj",
       "projectName": "HotelProject.Common",
-      "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\HotelProject.Common.csproj",
+      "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Common\\HotelProject.Common.csproj",
       "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
-      "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Common\\obj\\",
+      "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

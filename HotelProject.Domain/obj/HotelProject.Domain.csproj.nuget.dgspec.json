@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj": {}
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Domain\\HotelProject.Domain.csproj": {}
   },
   "projects": {
-    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj": {
+    "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Domain\\HotelProject.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj",
+        "projectUniqueName": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Domain\\HotelProject.Domain.csproj",
         "projectName": "HotelProject.Domain",
-        "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\HotelProject.Domain.csproj",
+        "projectPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Domain\\HotelProject.Domain.csproj",
         "packagesPath": "C:\\Users\\M.Mehdi.GH\\.nuget\\packages\\",
-        "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom-master\\HotelProject.Domain\\obj\\",
+        "outputPath": "C:\\CsharpProjects\\Hotel_Project\\HotelRoom\\HotelProject.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
