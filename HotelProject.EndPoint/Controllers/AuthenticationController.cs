@@ -30,6 +30,7 @@ namespace HotelProject.EndPoint.Controllers
         [HttpPost]
         public IActionResult SignUp(SignUpViewModel request)
         {
+            //validation
             CheckAll check = new CheckAll(request.Name, request.Mobile, request.Phone, request.Email,
                     request.Password, request.RePassword);
             if (!check.check())

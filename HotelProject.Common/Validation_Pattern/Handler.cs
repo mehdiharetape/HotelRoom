@@ -9,7 +9,6 @@ namespace HotelProject.Common.Validation_Pattern
 {
     public class Handler
     {
-        //public static Dictionary<string, bool> val = new Dictionary<string, bool>();
         public abstract class ValidateHandler
         {
             protected ValidateHandler successor;
@@ -106,6 +105,11 @@ namespace HotelProject.Common.Validation_Pattern
                 if (string.IsNullOrWhiteSpace(pass) || string.IsNullOrWhiteSpace(rePassword))
                 {
                     message = "رمز عبور را وارد کنید";
+                    status = false;
+                }
+                else if(pass.Length < 8)
+                {
+                    message = "رمز عبور حداقل باید 8 کاراکتر باشد";
                     status = false;
                 }
                 else if (!CheckRepassword(pass, rePassword))

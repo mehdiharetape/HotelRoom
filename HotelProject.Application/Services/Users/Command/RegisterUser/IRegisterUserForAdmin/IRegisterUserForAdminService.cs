@@ -25,6 +25,7 @@ namespace HotelProject.Application.Services.Users.Command.RegisterUser.IRegister
         {
             try
             {
+                //validation
                 CheckAll check = new CheckAll(request.Name, request.Mobile, request.Phone, request.Email,
                     request.Password, request.RePassword);
                 if (!check.check())
@@ -37,6 +38,7 @@ namespace HotelProject.Application.Services.Users.Command.RegisterUser.IRegister
                     };
                 }
 
+                //add user
                 User user = new User() 
                 {
                     Name = request.Name,
