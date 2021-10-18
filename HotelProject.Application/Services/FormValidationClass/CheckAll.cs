@@ -5,20 +5,12 @@ namespace HotelProject.Application.Services.Users.Command.RegisterUser.IRegister
 {
     public class CheckAll
     {
-        private string name, mobile, phone, email, password, repassword;
         ValidateHandler Name, Phone, Mobile, Email, Password;
         private List<ValidateHandler> handlers = new List<ValidateHandler>();
         public string message;
         private bool status = true;
         public CheckAll(string name, string mobile, string phone, string email, string password, string repassword)
-        {
-            this.name = name;
-            this.mobile = mobile;
-            this.phone = phone;
-            this.email = email;
-            this.password = password;
-            this.repassword = repassword;
-            
+        {          
             Name = new CheckName(name);
             Mobile = new CheckMobile(mobile);
             Phone = new CheckPhone(phone);

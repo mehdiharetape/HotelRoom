@@ -47,3 +47,4 @@ C:\CsharpProjects\Hotel_Project\HotelRoom\HotelProject.Application\obj\Debug\net
 C:\CsharpProjects\Hotel_Project\HotelRoom\HotelProject.Application\obj\Debug\net5.0\HotelProject.Application.dll
 C:\CsharpProjects\Hotel_Project\HotelRoom\HotelProject.Application\obj\Debug\net5.0\ref\HotelProject.Application.dll
 C:\CsharpProjects\Hotel_Project\HotelRoom\HotelProject.Application\obj\Debug\net5.0\HotelProject.Application.pdb
+C:\CsharpProjects\Hotel_Project\HotelRoom\HotelProject.Application\obj\Debug\net5.0\HotelProject.Application.csproj.CopyComplete
